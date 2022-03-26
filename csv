@@ -1,0 +1,17 @@
+import csv
+import datetime
+import time
+
+now = datetime.datetime.now()
+
+f = open('test.csv', 'w', newline='')
+wr = csv.writer(f)
+cnt = 0
+while True:
+    now = datetime.datetime.now()
+    wr.writerow([now, cnt])
+    cnt += 1
+    if cnt > 10:
+        break
+    time.sleep(10)
+f.close()
